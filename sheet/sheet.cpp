@@ -85,3 +85,19 @@ void Sheet::resize(int newColumnsNumber, int newRowsNumber) {
     delete[] temp;
 
 }
+
+int Sheet::saveInFile(string fileName) {
+    fstream file;
+    file.open(fileName,ios::out);
+    file<< this->numColumns<<"\n";
+    file<< this->numRows<<"\n";
+
+    for(int i =0; i<this->numRows;i++){
+        for(int z =0; z<this->numColumns;z++){
+            file<<this->arrayPtr[z][i]<<", ";
+        }
+        file<<"\n";
+    }
+    file.close();
+    return 0;
+}
