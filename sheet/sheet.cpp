@@ -10,6 +10,8 @@ Sheet::Sheet(int columnsNumber,int rowsNumber) {
     this->arrayPtr = new int*[this->numColumns];
     for(int i=0;i<this->numColumns;i++){
         this->arrayPtr[i] =new int[this->numRows];
+        memset(this->arrayPtr[i], 0,(sizeof(int)*this->numColumns));
+
     }
 }
 
@@ -55,4 +57,31 @@ int* &Sheet::operator[](int i) {
 
 int Sheet::setCellValue(int value, int columnNumber, int rowNumber) {
     this->arrayPtr[columnNumber][rowNumber]=value;
+}
+
+void Sheet::resize(int newColumnsNumber, int newRowsNumber) {
+    int** temp= new int*[this->numColumns];
+    for(int i=0;i<this->numColumns;i++){
+        temp[i] =new int[this->numRows];
+        memcpy(temp[i],this->arrayPtr[i],(sizeof(int)*this->numRows));
+    }
+
+    delete[] this->arrayPtr;
+
+
+    this->arrayPtr = new int*[newRowsNumber];
+    for(int i=0;i<newColumnsNumber;i++){
+        this->arrayPtr[i] =new int[newRowsNumber];
+        memset(this->arrayPtr[i], 0,(sizeof(int)*newRowsNumber));
+
+    }
+
+    for(int i=0;i<this->numColumns;i++){
+        memcpy(this->arrayPtr[i],temp[i],(sizeof(int)*this->numRows));
+    }
+    this->numColumns=newColumnsNumber;
+    this->numRows=newRowsNumber;
+
+    delete[] temp;
+
 }
