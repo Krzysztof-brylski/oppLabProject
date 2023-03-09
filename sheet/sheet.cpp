@@ -102,3 +102,74 @@ int Sheet::saveInFile(string fileName) {
     file.close();
     return 0;
 }
+
+float Sheet::processRow(int rowNumber, float (*action)(int *, int)) {
+    return action(this->arrayPtr[rowNumber], this->numRows);
+}
+float Sheet::processColumn(int columnNumber, float (*action)(int *, int)) {
+    int* arr = new int[this->numColumns];
+    int index=0;
+    for(int i=0;i<this->numRows;i++){
+        for(int z=0;z<this->numColumns;z++){
+            if(z != columnNumber){
+                continue;
+            }
+            arr[index]=this->arrayPtr[i][z];
+            index++;
+        }
+    }
+    return action(arr, this->numColumns);
+}
+
+
+int Sheet::sumByRow(int rowNumber) {
+    return  this->processRow(rowNumber, sum);
+}
+int Sheet::maxInRow(int rowNumber) {
+    return this->processRow(rowNumber, max);
+}
+int Sheet::minInRow(int rowNumber) {
+    return this->processRow(rowNumber, min);
+}
+float Sheet::avgInRow(int rowNumber){
+    return this->processRow(rowNumber, avg);
+}
+
+int Sheet::sumByColumn(int columnNumber){
+    return  this->processColumn(columnNumber, sum);
+}
+int Sheet::maxInColumn(int columnNumber) {
+    return this->processColumn(columnNumber, max);
+}
+int Sheet::minInColumn(int columnNumber) {
+    return this->processColumn(columnNumber, min);
+}
+float Sheet::avgInColumn(int columnNumber){
+    return this->processColumn(columnNumber, avg);
+}
+
+
+
+float Sheet::sum(int *arr, int size) {
+    float sum=0;
+    for(int i =0;i<size;i++){sum+=(float)arr[i];}
+    return sum;
+}
+float Sheet::min(int *arr, int size) {
+    float min=arr[0];
+    for(int i =0;i<size;i++){
+        if(arr[i]<min){min=(float)arr[i];}
+    }
+    return min;
+}
+float Sheet::max(int *arr, int size) {
+    float max=0;
+    for(int i =0;i<size;i++){
+        if(arr[i]>max){max=(float)arr[i];}
+    }
+    return max;
+}
+float Sheet::avg(int *arr, int size) {
+    return (Sheet::sum(arr,size))/size;
+}
+

@@ -14,7 +14,13 @@ private:
     int** arrayPtr= nullptr;
     int numRows=0;
     int numColumns=0;
-
+private:
+    float processRow(int rowNumber, float(*action)(int* arr, int size) );
+    float processColumn(int rowNumber, float(*action)(int* arr, int size) );
+    static float sum(int* arr, int size);
+    static float min(int* arr, int size);
+    static float max(int* arr, int size);
+    static float avg(int* arr, int size);
 public:
 
     /**
@@ -84,7 +90,7 @@ public:
      * @param[in] rowNumber specified row number
      * @return avg value from cells in specified row
      */
-    int avgInRow(int rowNumber);
+    float avgInRow(int rowNumber);
 
 
 public:
@@ -110,7 +116,7 @@ public:
      * @param[in] columnNumber specified row column
      * @return avg value from cells in specified column
      */
-    int avgInColumn(int columnNumber);
+    float avgInColumn(int columnNumber);
 
 };
 
