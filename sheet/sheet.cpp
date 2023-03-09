@@ -4,12 +4,12 @@
 
 #include "sheet.h"
 
-Sheet::Sheet(int columnsNumber,int rowsNumber) {
+Sheet::Sheet(int rowsNumber, int columnsNumber) {
     this->numRows=rowsNumber;
     this->numColumns=columnsNumber;
-    this->arrayPtr = new int*[this->numColumns];
-    for(int i=0;i<this->numColumns;i++){
-        this->arrayPtr[i] =new int[this->numRows];
+    this->arrayPtr = new int*[this->numRows];
+    for(int i=0;i<=this->numRows;i++){
+        this->arrayPtr[i] =new int[this->numColumns];
         memset(this->arrayPtr[i], 0,(sizeof(int)*this->numColumns));
 
     }
@@ -21,13 +21,13 @@ Sheet *Sheet::buildFromFile(string path) {
     fstream file;
 
     file.open(path,ios::in);
-    getline(file, columnsNumber);
     getline(file, rowsNumber);
+    getline(file, columnsNumber);
 
     columns=stoi(columnsNumber);
     rows = stoi(rowsNumber);
 
-    Sheet* newSheet = new Sheet(columns,rows);
+    Sheet* newSheet = new Sheet(rows,columns);
     string temp;
     int tempValue;
     for(int i=0;i<rows;i++){
@@ -55,29 +55,30 @@ int* &Sheet::operator[](int i) {
     return this->arrayPtr[i];
 }
 
-int Sheet::setCellValue(int value, int columnNumber, int rowNumber) {
+int Sheet::setCellValue(int value, int rowNumber,int columnNumber) {
     this->arrayPtr[columnNumber][rowNumber]=value;
+    return 0;
 }
 
-void Sheet::resize(int newColumnsNumber, int newRowsNumber) {
-    int** temp= new int*[this->numColumns];
-    for(int i=0;i<this->numColumns;i++){
-        temp[i] =new int[this->numRows];
-        memcpy(temp[i],this->arrayPtr[i],(sizeof(int)*this->numRows));
+void Sheet::resize( int newRowsNumber, int newColumnsNumber) {
+    int** temp= new int*[this->numRows];
+    for(int i=0;i<this->numRows;i++){
+        temp[i] =new int[this->numColumns];
+        memcpy(temp[i],this->arrayPtr[i],(sizeof(int)*this->numColumns));
     }
 
-    delete[] this->arrayPtr;
+
 
 
     this->arrayPtr = new int*[newRowsNumber];
-    for(int i=0;i<newColumnsNumber;i++){
-        this->arrayPtr[i] =new int[newRowsNumber];
-        memset(this->arrayPtr[i], 0,(sizeof(int)*newRowsNumber));
+    for(int i=0;i<newRowsNumber;i++){
+        this->arrayPtr[i] =new int[newColumnsNumber];
+        memset(this->arrayPtr[i], 0,(sizeof(int)*newColumnsNumber));
 
     }
 
-    for(int i=0;i<this->numColumns;i++){
-        memcpy(this->arrayPtr[i],temp[i],(sizeof(int)*this->numRows));
+    for(int i=0;i<this->numRows;i++){
+        memcpy(this->arrayPtr[i],temp[i],(sizeof(int)*this->numColumns));
     }
     this->numColumns=newColumnsNumber;
     this->numRows=newRowsNumber;
@@ -89,12 +90,12 @@ void Sheet::resize(int newColumnsNumber, int newRowsNumber) {
 int Sheet::saveInFile(string fileName) {
     fstream file;
     file.open(fileName,ios::out);
-    file<< this->numColumns<<"\n";
     file<< this->numRows<<"\n";
+    file<< this->numColumns<<"\n";
 
     for(int i =0; i<this->numRows;i++){
         for(int z =0; z<this->numColumns;z++){
-            file<<this->arrayPtr[z][i]<<", ";
+            file<<this->arrayPtr[i][z]<<", ";
         }
         file<<"\n";
     }

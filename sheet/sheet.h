@@ -22,7 +22,7 @@ public:
      * @param[in] rowsNumber - number of rows for new sheet
      * @param[in] columnsNumber - number of columns for new sheet
      */
-    Sheet(int columnsNumber=0, int rowsNumber=0);
+    Sheet(int rowsNumber=0, int columnsNumber=0);
 
     /**
      * Building sheet object from file
@@ -42,7 +42,7 @@ public:
      * @param[in] newRowsNumber - new number of rows for new sheet
      * @param[in] newColumnsNumber - new number of columns for new sheet
      */
-    void resize( int newColumnsNumber, int newRowsNumber);
+    void resize( int newRowsNumber, int newColumnsNumber);
 
     /**
      * setting value for specified cell
@@ -51,7 +51,7 @@ public:
      * @param[in] columnNumber -specified cell column number
      * @return 0 if succeed, other value error codes
      */
-    int setCellValue(int value, int columnNumber, int rowNumber);
+    int setCellValue(int value, int rowNumber, int columnNumber);
 
     /**
      * save object in file

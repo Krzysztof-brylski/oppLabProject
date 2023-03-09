@@ -6,9 +6,11 @@ int main(){
 
     Sheet* sheet = Sheet::buildFromFile("test.txt");
     sheetView(sheet);
-    sheet->resize(7,7);
+    sheet->resize(6,9);
     sheetView(sheet);
-
+//
     sheet->saveInFile("text2.txt");
+//    Sheet* sheet = new Sheet(1,2);
+//    sheetView(sheet);
 
 }
