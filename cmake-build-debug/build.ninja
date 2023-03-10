@@ -67,6 +67,12 @@ build CMakeFiles/oppLabProject.dir/sheet/sheet.cpp.obj: CXX_COMPILER__oppLabProj
   OBJECT_DIR = CMakeFiles\oppLabProject.dir
   OBJECT_FILE_DIR = CMakeFiles\oppLabProject.dir\sheet
 
+build CMakeFiles/oppLabProject.dir/cell/intCell.cpp.obj: CXX_COMPILER__oppLabProject_Debug D$:/programowanie/studia_programowanie/oppLabProject/cell/intCell.cpp || cmake_object_order_depends_target_oppLabProject
+  DEP_FILE = CMakeFiles\oppLabProject.dir\cell\intCell.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\oppLabProject.dir
+  OBJECT_FILE_DIR = CMakeFiles\oppLabProject.dir\cell
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target oppLabProject
@@ -75,7 +81,7 @@ build CMakeFiles/oppLabProject.dir/sheet/sheet.cpp.obj: CXX_COMPILER__oppLabProj
 #############################################
 # Link the executable oppLabProject.exe
 
-build oppLabProject.exe: CXX_EXECUTABLE_LINKER__oppLabProject_Debug CMakeFiles/oppLabProject.dir/main.cpp.obj CMakeFiles/oppLabProject.dir/view/menu.cpp.obj CMakeFiles/oppLabProject.dir/sheet/sheet.cpp.obj
+build oppLabProject.exe: CXX_EXECUTABLE_LINKER__oppLabProject_Debug CMakeFiles/oppLabProject.dir/main.cpp.obj CMakeFiles/oppLabProject.dir/view/menu.cpp.obj CMakeFiles/oppLabProject.dir/sheet/sheet.cpp.obj CMakeFiles/oppLabProject.dir/cell/intCell.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\oppLabProject.dir

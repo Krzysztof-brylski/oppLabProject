@@ -3,4 +3,4 @@ project(oppLabProject)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(oppLabProject main.cpp view/menu.cpp sheet/sheet.cpp)
+add_executable(oppLabProject main.cpp view/menu.cpp sheet/sheet.cpp cell/intCell.cpp)

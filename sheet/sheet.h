@@ -6,17 +6,30 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
+#include "../cell/intCell.h"
 using namespace std;
 
 class Sheet {
 private:
-    int** arrayPtr= nullptr;
+    IntCell** arrayPtr= nullptr;
     int numRows=0;
     int numColumns=0;
 private:
+    /**
+     * get all elements from specified row and perform action on it
+     * @param rowNumber - specified row number
+     * @param action callback function to perform on selected data set
+     * @return callback function result
+     */
     float processRow(int rowNumber, float(*action)(int* arr, int size) );
-    float processColumn(int rowNumber, float(*action)(int* arr, int size) );
+
+    /**
+     * get all elements from specified column and perform action on it
+     * @param columnNumber - specified column number
+     * @param action callback function to perform on selected data set
+     * @return callback function result
+     */
+    float processColumn(int columnNumber, float(*action)(int* arr, int size) );
     static float sum(int* arr, int size);
     static float min(int* arr, int size);
     static float max(int* arr, int size);
@@ -37,10 +50,22 @@ public:
      */
     static Sheet* buildFromFile(string path);
 public:
-
+    /**
+     * getter for rows number
+     * @return rows number
+     */
     int getRowsNumber();
+    /**
+    * getter for columns number
+    * @return columns number
+    */
     int getColumnsNumber();
-    int* &operator[](int i);
+    /**
+     * overloaded array subscript operator
+     * @param i - array index element
+     * @return  selected object by index
+     */
+    IntCell* &operator[](int i);
 public:
 
     /**
@@ -57,7 +82,10 @@ public:
      * @param[in] columnNumber -specified cell column number
      * @return 0 if succeed, other value error codes
      */
-    int setCellValue(int value, int rowNumber, int columnNumber);
+    //int setCellValue(int value, int rowNumber, int columnNumber);
+
+
+    int setCell(IntCell* cell, int rowNumber,int columnNumber);
 
     /**
      * save object in file

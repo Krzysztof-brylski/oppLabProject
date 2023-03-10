@@ -18,17 +18,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b6df67e-df07-48a1-af7a-02ed180875bb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cell/intCell.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cell/intCell.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-dde4114698cfd231f285.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-09T14-46-36-0080.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-oppLabProject-Debug-b97fe437faf21ba42e61.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oppLabProject.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oppLabProject.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oppLabProject.dir/sheet/sheet.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oppLabProject.dir/sheet/sheet.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oppLabProject.dir/view/menu.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/oppLabProject.dir/view/menu.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/oppLabProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/oppLabProject.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/text2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/text2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sheet/sheet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sheet/sheet.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sheet/sheet.h" beforeDir="false" afterPath="$PROJECT_DIR$/sheet/sheet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/view/menu.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +61,9 @@
     <option name="minorVersion" value="2.4" />
   </component>
   <component name="ProjectId" id="2Mk570PBz5vTZCzR6V2kTaFZL1w" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -73,6 +85,7 @@
       <recent name="D:\programowanie\studia_programowanie\oppLabProject\array" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programowanie\studia_programowanie\oppLabProject\cell\assets" />
       <recent name="D:\programowanie\studia_programowanie\oppLabProject\view" />
       <recent name="D:\programowanie\studia_programowanie\oppLabProject\array" />
       <recent name="D:\programowanie\studia_programowanie\oppLabProject\Spreadsheet " />
@@ -101,7 +114,9 @@
       <workItem from="1678298570784" duration="35000" />
       <workItem from="1678298675240" duration="3844000" />
       <workItem from="1678365045086" duration="11342000" />
-      <workItem from="1678391279967" duration="628000" />
+      <workItem from="1678391279967" duration="1929000" />
+      <workItem from="1678434561783" duration="3721000" />
+      <workItem from="1678460490275" duration="4445000" />
     </task>
     <servers />
   </component>
