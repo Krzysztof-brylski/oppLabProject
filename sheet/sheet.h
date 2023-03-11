@@ -17,22 +17,50 @@ private:
 private:
     /**
      * get all elements from specified row and perform action on it
-     * @param rowNumber - specified row number
-     * @param action callback function to perform on selected data set
+     * @param[in] rowNumber - specified row number
+     * @param[in] action callback function to perform on selected data set
      * @return callback function result
      */
     float processRow(int rowNumber, float(*action)(int* arr, int size) );
 
     /**
      * get all elements from specified column and perform action on it
-     * @param columnNumber - specified column number
-     * @param action callback function to perform on selected data set
+     * @param[in] columnNumber - specified column number
+     * @param[in] action callback function to perform on selected data set
      * @return callback function result
      */
     float processColumn(int columnNumber, float(*action)(int* arr, int size) );
+
+    /**
+     * summing function
+     * @param arr - array with data to sum
+     * @param size - size of array
+     * @return sum
+     */
     static float sum(int* arr, int size);
+
+    /**
+     * finding min function
+     * @param arr - array with data to find min
+     * @param size - size of array
+     * @return min value
+     */
     static float min(int* arr, int size);
+
+    /**
+     * finding max function
+     * @param arr - array with data to find max
+     * @param size - size of array
+     * @return max value
+     */
     static float max(int* arr, int size);
+
+    /**
+     * finding avg function
+     * @param arr - array with data to find avg
+     * @param size - size of array
+     * @return avg value
+     */
     static float avg(int* arr, int size);
 public:
 
@@ -62,7 +90,7 @@ public:
     int getColumnsNumber();
     /**
      * overloaded array subscript operator
-     * @param i - array index element
+     * @param[in] i - array index element
      * @return  selected object by index
      */
     IntCell* &operator[](int i);
